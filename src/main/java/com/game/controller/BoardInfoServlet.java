@@ -100,7 +100,7 @@ public class BoardInfoServlet extends HttpServlet {
 		}
 		
 		CommonView.forwardMessage(request, response);
-	}
+	} 
 	}
 
 
