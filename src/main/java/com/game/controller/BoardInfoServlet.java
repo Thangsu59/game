@@ -79,7 +79,7 @@ public class BoardInfoServlet extends HttpServlet {
 			board.put("biTitle", biTitle);
 			board.put("biContent", biContent);
 			board.put("uiNum", user.get("uiNum"));
-			int result=biService.updateBoardInfo(board);
+			int result=biService.updateBoardInfo(board); 
 			request.setAttribute("msg", "수정이 안됐습니다");
 			request.setAttribute("url", "/board-info/update?biNum="+biNum);
 			if(result==1) {
