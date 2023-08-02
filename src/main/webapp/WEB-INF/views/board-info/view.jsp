@@ -30,7 +30,7 @@
 				<tr>
 					<th scope="col">작성자</th>
 					<td>${board.uiNum }</td>
-				</tr>
+				</tr> 
 				</tr>
 					<th scope="col">작성일</th>
 					<td>${board.credat }</td>
