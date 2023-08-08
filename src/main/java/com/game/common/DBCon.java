@@ -5,8 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBCon {
+
 	private static final String DRIVER_NAME = "org.mariadb.jdbc.Driver";
-	private static final String URL = "jdbc:mariadb://localhost:3307/game";
+	private static final String URL = "jdbc:mariadb://localhost:3306/game";
 	private static final String USER = "KDTEST";
 	private static final String PWD = "kd1824java";
 	static {
@@ -16,6 +17,7 @@ public class DBCon {
 			e.printStackTrace();
 		}
 	}
+
 	public static Connection getCon() {
 		try {
 			return DriverManager.getConnection(URL, USER, PWD);
@@ -24,7 +26,7 @@ public class DBCon {
 		}
 		return null;
 	}
+	
 	public static void main(String[] args) {
-		System.out.println(getCon());
 	}
 }

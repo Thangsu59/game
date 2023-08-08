@@ -7,9 +7,8 @@ import com.game.dao.BoardInfoDAO;
 import com.game.dao.impl.BoardInfoDAOImpl;
 import com.game.service.BoardInfoService;
 
-public class BoardInfoServiceImpl implements BoardInfoService {
-	private BoardInfoDAO biDAO=new BoardInfoDAOImpl();
-
+public class BoardInfoServiceImpl implements BoardInfoService{
+	private BoardInfoDAO biDAO = new BoardInfoDAOImpl();
 	@Override
 	public List<Map<String, String>> selectBoardInfoList(Map<String, String> board) {
 		return biDAO.selectBoardInfoList(board);
@@ -17,13 +16,11 @@ public class BoardInfoServiceImpl implements BoardInfoService {
 
 	@Override
 	public Map<String, String> selectBoardInfo(String biNum) {
-		
 		return biDAO.selectBoardInfo(biNum);
 	}
 
 	@Override
 	public int insertBoardInfo(Map<String, String> board) {
-		
 		return biDAO.insertBoardInfo(board);
 	}
 

@@ -32,11 +32,11 @@ public class UserInfoServlet extends HttpServlet {
 			Map<String,String> userInfo = uiService.selectUserInfo(uiNum);
 			request.setAttribute("userInfo", userInfo);
 		}else if("logout".equals(cmd)) {
-			HttpSession session=request.getSession();
+			HttpSession session = request.getSession();
 			session.invalidate();
 			request.setAttribute("msg", "로그아웃 되었습니다.");
 			request.setAttribute("url", "/user-info/login");
-			CommonView.forwardMessage(request, response);
+			CommonView.forwardMessage(request,response);
 			return;
 		}
 		CommonView.forward(request, response);
@@ -84,16 +84,17 @@ public class UserInfoServlet extends HttpServlet {
 			}
 		}else if("login".equals(cmd)) {
 			request.setAttribute("msg", "아이디나 비밀번호를 확인하세요");
-			request.setAttribute("url","/user-info/login");
+			request.setAttribute("url", "/user-info/login");
 			HttpSession session = request.getSession();
-			String uiId=request.getParameter("uiId");
-			String uiPwd=request.getParameter("uiPwd");
-			Map<String,String> ui=uiService.login(uiId);
+			String uiId = request.getParameter("uiId");
+			String uiPwd = request.getParameter("uiPwd");
+			Map<String,String> ui = uiService.login(uiId);
 			if(ui!=null) {
-				String dbUiPwd=ui.get("uiPwd");
+				String dbUiPwd = ui.get("uiPwd");
 				if(uiPwd.equals(dbUiPwd)) {
 					request.setAttribute("msg", "로그인이 성공하였습니다.");
-					request.setAttribute("url","/");
+					request.setAttribute("url", "/");
+					
 					session.setAttribute("user", ui);
 				}
 			}
